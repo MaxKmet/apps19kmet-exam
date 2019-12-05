@@ -11,7 +11,7 @@ public class JsonObject extends Json {
     private ArrayList<JsonPair> pairs;
 
     public JsonObject(JsonPair... jsonPairs) {
-        // ToDo
+        // ToDo rewrite as HashMap
         pairs = new ArrayList<JsonPair>();
         for(JsonPair jp : jsonPairs){
             pairs.add(jp);
