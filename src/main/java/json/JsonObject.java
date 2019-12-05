@@ -59,6 +59,7 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         ArrayList<JsonPair> jpairs = new ArrayList<JsonPair>();
+        JsonObject newJObj = new JsonObject();
 
         for(String name : names){
             Json val = find(name);
@@ -69,7 +70,9 @@ public class JsonObject extends Json {
             }
 
         }
-        JsonPair[] jpArray = (JsonPair[]) jpairs.toArray();
-        return new JsonObject(jpArray);
+        for(JsonPair jp: jpairs){
+            newJObj.add(jp);
+        }
+        return newJObj;
     }
 }
